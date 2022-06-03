@@ -1,11 +1,5 @@
 package com.in28minutes.powermock;
 
-import static org.junit.Assert.assertEquals;
-import static org.mockito.Matchers.anyLong;
-import static org.mockito.Mockito.when;
-
-import java.util.Arrays;
-
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
@@ -13,6 +7,11 @@ import org.mockito.Mock;
 import org.powermock.api.mockito.PowerMockito;
 import org.powermock.core.classloader.annotations.PrepareForTest;
 import org.powermock.modules.junit4.PowerMockRunner;
+
+import java.util.Arrays;
+
+import static org.junit.Assert.assertEquals;
+import static org.mockito.Mockito.*;
 
 @RunWith(PowerMockRunner.class)
 @PrepareForTest({ UtilityClass.class /*The class with static method to be mocked*/})
@@ -39,7 +38,7 @@ public class PowerMockitoMockingStaticMethodTest {
 		//To verify a specific method call
 		//First : Call PowerMockito.verifyStatic() 
 		//Second : Call the method to be verified
-		PowerMockito.verifyStatic();
+		PowerMockito.verifyStatic(any());
 		UtilityClass.staticMethod(1 + 2 + 3);
 
 		// verify exact number of calls
