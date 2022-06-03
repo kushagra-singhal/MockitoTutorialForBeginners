@@ -1,12 +1,14 @@
 package com.in28minutes.business;
 
+import com.in28minutes.data.api.TodoService;
+
 import java.util.ArrayList;
 import java.util.List;
 
-import com.in28minutes.data.api.TodoService;
-
+// ToDoBusinessImpl is	 SUT(System Under Test)
 public class TodoBusinessImpl {
 
+	//ToDoService is Dependency
 	private TodoService todoService;
 
 	TodoBusinessImpl(TodoService todoService) {
